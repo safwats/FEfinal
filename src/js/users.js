@@ -21,13 +21,26 @@ const getUsers = async () => {
     row.innerHTML = `
         <td>${user.username}</td>
         <td>${user.email}</td>
-        <td><button class="check" data-id="${user.id}">Info</button></td>
-        <td><button class="del" data-id="${user.id}">Delete</button></td>
-        <td>${user.id}</td>
+        <td><button class="check" data-id="${user.user_id}">Info</button></td>
+        <td><button class="del" data-id="${user.user_id}">Delete</button></td>
+        <td>${user.user_id}</td>
       `;
 
     tableBody.appendChild(row);
   });
+};
+
+// Get the snackbar DIV
+const snackbar = document.getElementById('snackbar');
+
+// Reusable function to show snackbar message
+const showSnackbar = (message, type = '') => {
+  snackbar.innerText = message;
+  snackbar.className = `show ${type}`.trim(); // Add optional type class (e.g., 'error')
+
+  setTimeout(() => {
+    snackbar.className = snackbar.className.replace('show', '').trim();
+  }, 3000);
 };
 
 const addUser = async (event) => {
@@ -68,13 +81,21 @@ const addUser = async (event) => {
   const response = await fetchData(url, options);
 
   if (response.error) {
-    alert('Sinun täytyy muistaa täyttää kaikki kentät!!');
+    //alert('Sinun täytyy muistaa täyttää kaikki kentät!!');
+    // On hyvä jättää oikea virhe ns. koodareille luettavaksi
     console.log(response.error);
+    // Käyttäjän viesti!!
+    showSnackbar(
+      'Virhe lähettämisessä, täytä kaikki vaadittavat kentät!',
+      'error',
+    );
     return;
   }
 
   if (response.message) {
-    alert(response.message);
+    //alert(response.message);
+    console.log(response.message);
+    showSnackbar('Onnistunut käyttäjän lisääminen :) 💕', 'success');
   }
 
   console.log(response);
