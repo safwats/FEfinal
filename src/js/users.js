@@ -28,6 +28,56 @@ const getUsers = async () => {
 
     tableBody.appendChild(row);
   });
+
+  addEventListeners();
+};
+
+const dialog = document.querySelector('.info_dialog');
+const closeButton = document.querySelector('.info_dialog button');
+// "Close" button closes the dialog
+closeButton.addEventListener('click', () => {
+  dialog.close();
+});
+
+const addEventListeners = () => {
+  const nappulat = document.querySelectorAll('.check');
+  console.log(nappulat);
+  nappulat.forEach((button) => {
+    button.addEventListener('click', async (event) => {
+      console.log('Klikkasit nappulaa:', event.target);
+      // get id with data-attribute
+      // or use a hidden input field in table
+      const userId = event.target.dataset.id;
+      console.log('Haetaan tietoja käyttäjälle id:llä:', userId);
+
+      // Fetch user details
+      const user = await getUserById(userId);
+      console.log(user);
+
+      if (user) {
+        // open modal
+        dialog.querySelector('p').innerHTML = '';
+        dialog.showModal();
+        dialog.querySelector('p').innerHTML = `
+          <div>User ID: <span>${user.user_id}</span></div>
+          <div>User Name: <span>${user.username}</span></div>
+          <div>Email: <span>${user.email}</span></div>
+          <div>Role: <span>${user.user_level}</span></div>`;
+      }
+    });
+  });
+};
+
+const getUserById = async (userId) => {
+  const user = await fetchData(`http://localhost:3000/api/users/${userId}`);
+
+  if (user.error) {
+    console.error(`Error fetching item with ID ${userId}:`, user.error);
+    alert(`Error: ${user.error}`);
+    return null;
+  }
+
+  return user;
 };
 
 // Get the snackbar DIV
