@@ -1,5 +1,29 @@
 import {fetchData} from './fetch';
 
+/////////////////////
+// Dialogi
+const dialog = document.querySelector('.info_dialog');
+const closeButton = document.querySelector('.info_dialog button');
+
+closeButton.addEventListener('click', () => {
+  dialog.close();
+});
+
+/////////////////////
+// Snackbar
+const snackbar = document.getElementById('snackbar');
+
+const showSnackbar = (message, type = '') => {
+  snackbar.innerText = message;
+  snackbar.className = `show ${type}`.trim(); // Add optional type class (e.g., 'error')
+
+  setTimeout(() => {
+    snackbar.className = snackbar.className.replace('show', '').trim();
+  }, 3000);
+};
+
+/////////////////////
+// getUsers
 const getUsers = async () => {
   const url = 'http://localhost:3000/api/users';
   const users = await fetchData(url);
@@ -32,30 +56,19 @@ const getUsers = async () => {
   addEventListeners();
 };
 
-const dialog = document.querySelector('.info_dialog');
-const closeButton = document.querySelector('.info_dialog button');
-// "Close" button closes the dialog
-closeButton.addEventListener('click', () => {
-  dialog.close();
-});
-
 const addEventListeners = () => {
   const nappulat = document.querySelectorAll('.check');
   console.log(nappulat);
   nappulat.forEach((button) => {
     button.addEventListener('click', async (event) => {
       console.log('Klikkasit nappulaa:', event.target);
-      // get id with data-attribute
-      // or use a hidden input field in table
       const userId = event.target.dataset.id;
       console.log('Haetaan tietoja käyttäjälle id:llä:', userId);
 
-      // Fetch user details
       const user = await getUserById(userId);
       console.log(user);
 
       if (user) {
-        // open modal
         dialog.querySelector('p').innerHTML = '';
         dialog.showModal();
         dialog.querySelector('p').innerHTML = `
@@ -68,6 +81,8 @@ const addEventListeners = () => {
   });
 };
 
+/////////////////////
+// getUsersById
 const getUserById = async (userId) => {
   const user = await fetchData(`http://localhost:3000/api/users/${userId}`);
 
@@ -76,47 +91,30 @@ const getUserById = async (userId) => {
     alert(`Error: ${user.error}`);
     return null;
   }
-
   return user;
 };
 
-// Get the snackbar DIV
-const snackbar = document.getElementById('snackbar');
-
-// Reusable function to show snackbar message
-const showSnackbar = (message, type = '') => {
-  snackbar.innerText = message;
-  snackbar.className = `show ${type}`.trim(); // Add optional type class (e.g., 'error')
-
-  setTimeout(() => {
-    snackbar.className = snackbar.className.replace('show', '').trim();
-  }, 3000);
-};
-
+/////////////////////
+// addUser
 const addUser = async (event) => {
   event.preventDefault();
-  // POST
-  //content-type: application/json
 
   // Haetaan formista oikea tieto mikä on täytetty .value
   const username = document.querySelector('#username').value.trim();
   const password = document.querySelector('#password').value.trim();
   const email = document.querySelector('#email').value.trim();
 
-  // const bodyData = {
-  //   username: 'Uusi käyttäjä',
-  //   password: 'salakala',
-  //   email: 'newuser@example.com',
-  // };
+  // url
+  const url = 'http://localhost:3000/api/users';
+
+  // POST
+  //content-type: application/json
 
   const bodyData = {
     username: username,
     password: password,
     email: email,
   };
-
-  // url
-  const url = 'http://localhost:3000/api/users';
 
   // options eli mikä metodi, headers ja JSON
   const options = {
@@ -131,7 +129,6 @@ const addUser = async (event) => {
   const response = await fetchData(url, options);
 
   if (response.error) {
-    //alert('Sinun täytyy muistaa täyttää kaikki kentät!!');
     // On hyvä jättää oikea virhe ns. koodareille luettavaksi
     console.log(response.error);
     // Käyttäjän viesti!!
@@ -143,7 +140,6 @@ const addUser = async (event) => {
   }
 
   if (response.message) {
-    //alert(response.message);
     console.log(response.message);
     showSnackbar('Onnistunut käyttäjän lisääminen :) 💕', 'success');
   }

@@ -96,10 +96,8 @@
             nappulasta 'Add User'.
           </p>
 
-          <!-- https://www.w3schools.com/css/css_form.asp -->
-          <!-- https://www.w3schools.com/css/tryit.asp?filename=trycss_form_padding -->
-
           <pre style="overflow: auto">
+
   POST http://localhost:3000/api/users
   content-type: application/json
 
@@ -107,8 +105,8 @@
     "username": "Uusi käyttäjä",
     "password": "salakala",
     "email": "newuser@example.com"
-  }</pre
-          >
+  }
+          </pre>
 
           <form class="addform">
             <label for="username">Username</label>
@@ -141,6 +139,30 @@
           </form>
         </div>
       </div>
+
+      <h3>Flexboxilla tehdyt kortit - Runko</h3>
+      <!-- kortit sisältävä flex parent -->
+
+      <section class="card-area">
+        <!-- yksittäinen kortti -->
+        <div class="card">
+          <!-- vasen puoli jossa kuva -->
+          <div class="card-img">
+            <img src="/img/diary.jpg" alt="" />
+          </div>
+
+          <!-- oikea puoli jossa päiväkirjamerkintä-->
+          <div class="card-diary">
+            <!-- tänne myös flexbox rakenne -->
+            Tänne dataa
+          </div>
+        </div>
+      </section>
+
+      <h3>Flexboxilla tehty kortti + Fetch + Itse luodut elementit</h3>
+
+      <button class="get_entries">Hae päiväkirjamerkinnät</button>
+      <section class="card-area" id="diary"></section>
     </main>
 
     <!-- The actual snackbar -->
