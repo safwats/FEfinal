@@ -5,111 +5,67 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-  </head>
+    <link rel="stylesheet" href="../css/style.css" />
 
-  <body>
+  </head>
+    <body>
+      <header class="header">
+          <!-- Banneri / Navbar -->
+          <div class="banner">
+              <div class="navbar">
+                  <div class="logo">👼🏻HyTe hyvinvointialue</div>
+                  <ul>
+                      <li><a href="./index.html">Home</a></li>
+                      <li><a href="./about.html">About</a></li>
+
+
+
+                  </ul>
+              </div>
+          </div>
+      </header>
+  
+    <div class="auth-container">
 
     <h3>REGISTER</h3>
 
-    <p>
-      Lisää käyttäjiä formin avulla. Formi lisää uuden käyttäjän
-      nappulasta 'Add User'.
-    </p>
-
-    <!-- https://www.w3schools.com/css/css_form.asp -->
-    <!-- https://www.w3schools.com/css/tryit.asp?filename=trycss_form_padding -->
-
-    <pre style="overflow: auto">
-    POST http://localhost:3000/api/users
-    content-type: application/json
-
-    {
-      "username": "Uusi käyttäjä",
-      "password": "salakala",
-      "email": "newuser@example.com"
-    }
-    </pre>
+    <pre style="overflow: auto"></pre>
 
     <form class="registerForm">
       <label for="username">Username</label>
-      <input
-        id="username"
-        type="text"
-        name="username"
-        placeholder="Uusi käyttäjä"
-      />
+      <input id="username" type="text" name="username" placeholder="Uusi käyttäjä" minlength="3" maxlength="8" required />
       <label for="password">Password</label>
-      <input
-        id="password"
-        type="password"
-        name="password"
-        placeholder="salakala"
-      />
-      <label for="password">Email</label>
-      <input
-        id="email"
-        type="email"
-        name="email"
-        placeholder="newuser@example.com"
-      />
-      <input
-        name="submit"
-        type="submit"
-        value="Add User"
-        class="postuser"
-      />
+      <input id="password" type="password" name="password" placeholder="salasana"
+        pattern="^(?!.*[\s])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+        required />
+      <label for="password">Email Address</label>
+      <input id="email" type="email Address" name="email Address" placeholder="newuser@example.com" />
+      <input name="submit" type="submit" value="Sign in" class="postuser" />
     </form>
   </div>
-
-    <h3>LOGIN</h3>
-    <pre><code>
-      # Login
-      POST http://localhost:3000/api/auth/login
-      content-type: application/json
-
-      {
-        "username": "user",
-        "password": "secret"
-      }
-      </code></pre>
     <div>
+      <div class="auth-container">
+      <h3 id="kirjaudu-sisaan">LOGIN</h3>
       <form class="loginForm">
         <label for="username">Username</label>
-        <input type="text" name="username" placeholder="name" value="name" />
+        <input type="text" name="username" placeholder="Käyttäjä" required />
+      
         <label for="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          placeholder="name123"
-          value="name"
-        />
-        <input
-          name="submit"
-          type="submit"
-          value="Login and get new token"
-          class="loginform"
-        />
+        <input type="password" name="password" placeholder="Salasana" required />
+      
+        <input type="submit" value="Login" class="loginform" />
       </form>
+      
       <br />
       <div id="loginResponse"></div>
     </div>
-    <hr />
     <div>
-      <pre><code>
-        # Get user info by token (requires token)
-        GET http://localhost:3000/api/auth/me
-        Authorization: Bearer (put-user-token-here)</code></pre>
-      <button id="meRequest">Make an "authenticated" request</button>
       <br />
       <div id="meResponse"></div>
     </div>
-    <hr />
-    <div>
-      <button id="clearButton">Clear localStorage</button>
       <br />
       <code id="clearResponse"></code>
-    </div>
+  </div>
   </body>
-
   <script type="module" src="/src/js/auth.js"></script>
 </html>

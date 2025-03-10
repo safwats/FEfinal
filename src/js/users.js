@@ -25,7 +25,7 @@ const showSnackbar = (message, type = '') => {
 /////////////////////
 // getUsers
 const getUsers = async () => {
-  const url = 'http://localhost:3000/api/users';
+  const url = ' http://127.0.0.1:3000/api/users';
   const users = await fetchData(url);
 
   if (users.error) {
@@ -84,7 +84,7 @@ const addEventListeners = () => {
 /////////////////////
 // getUsersById
 const getUserById = async (userId) => {
-  const user = await fetchData(`http://localhost:3000/api/users/${userId}`);
+  const user = await fetchData(`http://127.0.0.1:3000/api/users/${userId}`);
 
   if (user.error) {
     console.error(`Error fetching item with ID ${userId}:`, user.error);
@@ -105,7 +105,7 @@ const addUser = async (event) => {
   const email = document.querySelector('#email').value.trim();
 
   // url
-  const url = 'http://localhost:3000/api/users';
+  const url = ' http://127.0.0.1:3000/api/users';
 
   // POST
   //content-type: application/json
@@ -141,7 +141,7 @@ const addUser = async (event) => {
 
   if (response.message) {
     console.log(response.message);
-    showSnackbar('Onnistunut käyttäjän lisääminen :) 💕', 'success');
+    showSnackbar('Onnistunut käyttäjän lisääminen :) ✅', 'success');
   }
 
   console.log(response);

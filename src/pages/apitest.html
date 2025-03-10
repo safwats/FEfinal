@@ -3,10 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script type="module" src="/src/js/main.js"></script>
+    <script src="/src/js/bmidemo.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
-  <body>
+  <body class="apitest">
+        <!-- Banneri -->
+      <div class="banner">
+        <div class="navbar">
+            <div class="logo">👼🏻HyTe hyvinvointialue</div>
+              <ul>
+                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="./about.html">About</a></li>
+                  <li><a href="./src/pages/apitest.html" target="_blank">Oma sivusto</a></li>
+                  <li id="kirjaudu-ulos"><a href="#" onclick="logout()">Kirjaudu ulos</a></li>
+              </ul>
+          </div>
+      </div>
     <div id="app"></div>
 
     <main>
@@ -18,45 +33,28 @@
 
       <ul class="testlist"></ul>
 
-      <pre>GET http://localhost:3000/api/items </pre>
-      <button class="get_items">Get all items</button>
+      <pre>GET  http://127.0.0.1:3000/api/items </pre>
 
       <h3>Esimerkkitaulukko, staattinen</h3>
 
       <table class="styled-table">
         <thead>
-          <tr>
-            <th>User Name</th>
-            <th>Email</th>
-            <th>Info</th>
-            <th>Delete</th>
-            <th>ID</th>
-          </tr>
+
         </thead>
         <tbody>
           <tr>
-            <td>Dom</td>
-            <td>dom@google.com</td>
-            <td><button class="check">Info</button></td>
-            <td><button class="del">Delete</button></td>
-            <td>1</td>
+
           </tr>
           <!--  <tr class="active-row"> -->
           <tr>
-            <td>Melissa</td>
-            <td>melissa@google.com</td>
-            <td><button class="check">Info</button></td>
-            <td><button class="del">Delete</button></td>
-            <td>2</td>
+
           </tr>
         </tbody>
       </table>
 
       <h3>Haetaan nappia painamalla kaikki käyttäjät</h3>
 
-      <pre>GET http://localhost:3000/api/users</pre>
-
-      <button class="get_users">Get all users</button>
+      <pre>GET  http://127.0.0.1:3000/api/users</pre>
 
       <div class="forms">
         <div style="flex: 1">
@@ -73,13 +71,6 @@
 
           <table class="styled-table">
             <thead>
-              <tr>
-                <th>User Name</th>
-                <th>Email</th>
-                <th>Info</th>
-                <th>Delete</th>
-                <th>ID</th>
-              </tr>
             </thead>
             <tbody id="taulukko" class="tbody">
               <!-- tänne haetaan kaikki käyttäjät -->
@@ -91,6 +82,7 @@
         <div style="flex: 1">
           <h3>POST</h3>
 
+
           <p>
             Lisää käyttäjiä formin avulla. Formi lisää uuden käyttäjän
             nappulasta 'Add User'.
@@ -101,46 +93,32 @@
   POST http://localhost:3000/api/users
   content-type: application/json
 
-  {
-    "username": "Uusi käyttäjä",
-    "password": "salakala",
-    "email": "newuser@example.com"
-  }
+
           </pre>
 
-          <form class="addform">
-            <label for="username">Username</label>
-            <input
-              id="username"
-              type="text"
-              name="username"
-              placeholder="Uusi käyttäjä"
-            />
-            <label for="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              placeholder="salakala"
-            />
-            <label for="password">Email</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="newuser@example.com"
-            />
-            <input
-              name="submit"
-              type="submit"
-              value="Add User"
-              class="formpost"
-            />
-          </form>
         </div>
       </div>
+      <!--oma näkymään päivääkirja varteen -->
+      <form class="luo merkintä">
+        <label for="päiväkirja">päiväkirja</label>
+        <input type="text" name="username" placeholder="vuosi-pv-kk" required />
+      
+        <label for="">päiväkirja</label>
+        <input type="text" name="username" placeholder="Fiilis" required />
+        
+        <label for="päiväkirja">päiväkirja</label>
+        <input type="text" name="username" placeholder="Paino" required />
+      
+        <label for="">päiväkirja</label>
+        <input type="text" name="username" placeholder="Uni" required />
+        <label for="päiväkirja">päiväkirja</label>
+        <input type="text" name="username" placeholder="Huomio" required />
+    
+        <input type="submit" value="Hae" class="confirm_entry" />
+      </form>
 
-      <h3>Flexboxilla tehdyt kortit - Runko</h3>
+
+
       <!-- kortit sisältävä flex parent -->
 
       <section class="card-area">
@@ -148,20 +126,26 @@
         <div class="card">
           <!-- vasen puoli jossa kuva -->
           <div class="card-img">
-            <img src="/img/diary.jpg" alt="" />
+            <img src="/img/notebook.jpg" alt="" />
           </div>
 
           <!-- oikea puoli jossa päiväkirjamerkintä-->
           <div class="card-diary">
             <!-- tänne myös flexbox rakenne -->
-            Tänne dataa
-          </div>
+            <h2>Katso!</h2>
+            <p>Pvm</p>
+            <p>Fiilis</p>
+            <p>Paino</p>
+            <p>Uni</p>
+            <p>Huomio</p>
         </div>
+        <button class="get_entries">Näytä merkinnät</button>
+        <button id="create_entry">Luo merkintä</button>
+        <div id="content"></div>
+        
       </section>
-
-      <h3>Flexboxilla tehty kortti + Fetch + Itse luodut elementit</h3>
-
-      <button class="get_entries">Hae päiväkirjamerkinnät</button>
+      
+      
       <section class="card-area" id="diary"></section>
     </main>
 
@@ -178,6 +162,53 @@
       <button autofocus>Close</button>
     </dialog>
 
-    <script type="module" src="/src/js/main.js"></script>
+
+
+     <!-- BMI-laskuri -->
+     <div class="card-bmi">
+      <img src="/public/img/bmi.jpg" alt="BMI Index chart" style="width: 100%" />
+      <h2>Painoindeksilaskuri / BMI-laskuri</h2>
+      <p class="description">
+        Painoindeksilaskurilla voit laskea pituuden ja painon perustella
+        painoindeksin (BMI, Body Mass Index).
+      </p>
+
+      <!-- Korjattu tyhjä action-attribuutti -->
+      <form action="#" method="post">
+        <label for="weight">Anna painosi:</label>
+        <input type="text" id="weight" name="weight" placeholder="kg" />
+        <label for="height">Anna pituutesi:</label>
+        <input type="text" id="height" name="height" placeholder="cm" />
+        <button type="submit" class="btn calculate">Laske indeksi</button>
+      </form>
+
+      <section class="bmi-table">
+        <h2>BMI-tulokset</h2>
+        <p>Mittaustuloksesi: <span class="bmi-score">0</span></p>
+
+        <table id="bmiTbl" class="table table-bordered">
+          <tbody>
+            <tr class="bmi0-19">
+              <td>Alipaino</td>
+              <td>0 - 18.9</td>
+            </tr>
+            <tr class="bmi19-25">
+              <td>Normaali paino</td>
+              <td>19 - 24.9</td>
+            </tr>
+            <tr class="bmi25-30">
+              <td>Ylipaino</td>
+              <td>25.0 - 40.0 tai enemmän</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          〽️ Analyysi:
+          <span class="analysis">Tähän saat analyysin BMI tuloksestasi</span>
+        </p>
+      </section>
+    </div>
   </body>
+  <footer> Safwatin hyvinvointi sovellus</footer>
 </html>

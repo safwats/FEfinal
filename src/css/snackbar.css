@@ -15,15 +15,11 @@
 }
 
 #snackbar.error {
-  background-color: crimson;
+  background-color: rgb(9, 214, 152);
 }
 
 #snackbar.success {
   background-color: rgb(94, 240, 72);
-}
-
-#snackbar.warning {
-  background-color: rgb(221, 167, 32);
 }
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */

@@ -1,7 +1,7 @@
 import {fetchData} from './fetch';
 
 const getItems = async () => {
-  const url = 'http://localhost:3000/api/items';
+  const url = ' http://127.0.0.1:3000/api/items';
   const items = await fetchData(url);
 
   if (items.error) {

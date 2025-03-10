@@ -1,30 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
-    </nav>
-    <h2>Index / Kotisivu</h2>
-    <ul>
-      <li>
-        <a href="./src/pages/apitest.html" target="_blank"
-          >Linkki APItesteihin</a
-        >
-      </li>
-      <li>
-        <a href="./src/pages/authtest.html" target="_blank">Linkki Auth</a>
-      </li>
-    </ul>
+    <!-- Banneri -->
+    <div class="banner">
+        <div class="navbar">
+            <div class="logo">👼🏻HyTe hyvinvointialue</div>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./src/pages/authtest.html" target="_blank">Kirjaudu sisään</a></li>
+            </ul>
+        </div>
+    </div>
+  
+    <!-- Yhteystiedot-kortti -->
+    <div class="card-yhteystiedot">
+        <h1>Yhteystiedot</h1>
+        <h2>Tämä on meidän tarinamme</h2>
+        <p>
+          <img class="heart" src="img/heartbeat.webp" alt="heartbeat" />
+          <img class="heart-right" src="img/sydan.png" alt="heart-right" />
+          Olemme joukko nuoria yrittäjiä, jotka uskovat HRV-tiedon ja
+          treeniohjelman voimaan hyvinvoinnin seurannassa.
+          <br /><br />
+          Sykevälivaihtelua tai HRV:tä käytetään fysiologisiin mittauksiin, kuten
+          VO2-maksimaalinen hapenottokyky, SV-stressitesti, suoritustaso,
+          anaerobinen kynnys ja harjoituksen tehokkuus.
+          <br /><br />
+          Yhdistämällä HRV-seurannan henkilökohtaiseen treeniohjelmaasi voit
+          saavuttaa nopeasti, tehokkaasti sekä ennen kaikkea turvallisesti uusia
+          tasoja kuntosi kehityksessä.
+          <br /><br />
+          Ohjelmamme tukee kehitystäsi eri treeniohjelmien muodossa, tarjoaa
+          päiväkirjan hyvinvointisi seurantaan sekä HRV-tietosi analysointiin.
+          Voit saada kauttamme myös yhteyden terveydenhuollon ammattilaisiin
+          sekä personal trainer -palveluihin.
+        </p>
+    </div>
 
+    <div class="slogan">
+      Vaikuttaminen on tärkein tehtävämme. Teemme kestävää tulevaisuutta kunnille ja koko yhteiskunnalle. Toimimalla yhdessä olemme vaikuttavampia. Edunvalvontamme on ennakoivaa ja oikea-aikaista, tietoon perustuvaa vaikuttamista. Keskeisenä tavoitteenamme on turvata kunta-alalle riittävät toimintaedellytykset ja resurssit tuottaa laadukkaita palveluita asukkailleen sekä edistää alueensa elinvoimaa.
+Tunnistamme kuntien edunvalvontatarpeita, arvioimme päätösten kuntavaikutuksia ja edistämme kuntien etua päätöksenteossa sekä kansallisella että kansainvälisellä tasolla.
+Tarjoamme alustan kuntien edunvalvonta- ja vertaiskeskusteluille laajan verkostotoimintamme kautta. Lue lisää verkostoistamme
+Teemme edunvalvontatavoitteitamme tukevaa tutkimus-, kehittämis- ja data-analytiikkatoimintaa sekä ennakoimme jatkuvasti toimintaympäristön muutoksia kuntien näkökulmasta.
+    </div>
     <script type="module" src="/src/js/index.js"></script>
   </body>
+  <footer>Safwatin hyvinvointi sovellus</footer>
 </html>

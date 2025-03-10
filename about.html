@@ -4,25 +4,66 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" /> 
     <title>Vite App</title>
   </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
-    </nav>
-    <h2>About sivu</h2>
-    <div>
-      Tämä on sivuston rakenteen toinen sivu, tässä esimerkki viten poluista
-    </div>
-    <!-- staattisten kuvien viittaaminen public kansiosta-->
-    <h4>Staattinen kuva</h4>
-    <img src="/img/diary.jpg" width="300" />
-    <!-- tähän haetaan css taustakuva, tsekkaa css tiedostosta oikea polku-->
-    <h4>Taustakuva</h4>
-    <div id="bgimage"></div>
+  <body class="about-body">
+    <header class="header">
+    <!-- Banneri -->
+    <div class="banner">
+      <div class="navbar">
+          <div class="logo">👼🏻HyTe hyvinvointialue</div>
+          <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./about.html">About</a></li>
+              <li><a href="./src/pages/authtest.html" target="_blank">Kirjaudu sisään</a></li>
+          </ul>
+      </div>
+  </div>
+    </header>
+    <div class="box-container">
+      <div class="box left-box">
+          <h1>Yhteystiedot</h1>
+          <p>Tämä on meidän tarinamme...<br>
+            HYTE-toimintamallien arviointiin liittyvää digitaalista palvelua kehitetään parhaillaan. Tuloksena on tiedolla johtamisen väline hyvinvointijohtamisen tueksi. Palveluun kootaan systemaattisesti arvioituja hyvinvoinnin, terveyden ja turvallisuuden edistämisen toimintamalleja. Se vastaa kysymykseen, mikä näyttöön perustuva HYTE-toimintamalli on vaikuttava, mikä ei, ja miksi..</p>
+      </div>
+
+      <div class="box right-box">
+          <h1>Mitä etsit? </h1>
+          <h1>Miten voimme auttaa?</h1>
+          <p>✔️Kuraattorin tärkeä tehtävä on myös olla mukana tukemassa koko päiväkotiyhteisön hyvinvointia. Yhteisöllinen hyvinvointityö on suunnitelmallista työskentelyä lapsiryhmien kanssa, vanhemmille suunnattua toimintaa, opettajien kouluttamista lasten hyvinvointiin vaikuttavista asioista tai osallistumista yhteisöllisyyttä ja viihtyvyyttä lisääviin tilaisuuksiin.
+          </p>Tätä kutsutaan yhteisölliseksi hyvinvointityöksi.
+          <p>✔️Yhteisöllinen hyvinvointityö on suunnitelmallista työskentelyä lapsiryhmien kanssa, vanhemmille suunnattua toimintaa, opettajien kouluttamista lasten hyvinvointiin vaikuttavista asioista tai osallistumista yhteisöllisyyttä ja viihtyvyyttä lisääviin tilaisuuksiin.</p>
+          <p>✔️Etänä toteutettavat ensitietoryhmät vanhemmille eri teemoista. Ryhmät toteutetaan yhden kerran etätapaamisina. Ryhmissä annetaan tietoa, tukea ja keinoja lapsiperheille.
+
+            Voit tulla mukaan tietokoneen, tabletin tai kännykän välityksellä. Laitteelle, jota käytät pitää antaa lupa käyttää sekä mikrofonia että kameraa, jotta ne toimivat. Otathan huomioon, että tapaamiseen osallistuu myös muita vanhempia. Valitse siis rauhallinen paikka, jossa voit halutessasi jutella niin ettei muiden tai sinun perheesi asiat tule sivullisten tietoon.</p>
+          <div>
+              <button type="button"><a href="https://vakehyva.fi/fi/ajanvaraus-ja-asiointi" class="button">Ajanvaraus</a></button>
+          </div>
+      </div>
+  </div>
+
     <script type="module" src="/src/js/about.js"></script>
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50760.314861583276!2d26.70022058461241!3d60.87900975114522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46904d716f23ae03%3A0x400b551554bb320!2sKouvola!5e0!3m2!1sfi!2sfi!4v1741441306716!5m2!1sfi!2sfi" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
   </body>
+  <div class="content-us">
+
+
+    <section>
+
+        <h1>Contact us</h1>
+        <address>
+            <p>👼🏻Hyte sovellus.</p>
+            <p>Eskolanmäki 3</p>
+            <p>45100,KOUVOLA</p>
+            <p>Finland</p>
+            <p>Email: randomi@metropolia.fi</p>
+            <p>Phone: +358(0)234567890</p>
+        </address>
+    </section>
+</div>
+  <footer> Safwatin hyvinvointi sovellus</footer>
 </html>

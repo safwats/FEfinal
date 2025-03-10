@@ -1,12 +1,7 @@
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,15 +11,31 @@
   --p-10: 10px;
 }
 
-* {
+body * {
   box-sizing: border-box;
+  
 }
 
 body {
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 16px;
+  block-size: fit-content;
+  margin: 0;
+  padding: 0;
+  background-image: url("../img/hytekuva.png"); 
+  background-size: cover;  /* Skaalaa kuva täyttämään koko näkymän */
+  background-position: center;  
+  background-attachment: fixed;  /* Pitää kuvan paikallaan skrollatessa */
+  background-repeat: no-repeat; /* Estää kuvan toistumisen */
 }
+
+.about-body {
+  background-image: url('../img/hytekuva.png');
+  overflow: scroll;
+}
+.apitest {
+  background: url("/img/hytekuva.png?v=1") no-repeat center center fixed;
+  background-size: cover;
+}
+
 
 h1 {
   font-size: 3.2em;
@@ -32,7 +43,7 @@ h1 {
 }
 
 h3 {
-  border-bottom: 1px solid rgb(184, 15, 117);
+  border-bottom: 1px solid rgb(28, 28, 31);
 }
 
 a {
@@ -50,7 +61,7 @@ a:hover {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 nav {
@@ -178,8 +189,7 @@ button.del {
 }
 
 form {
-  background-color:  var(--pink);
-  color: #ffffff;
+  color: #0b0101;
   padding: 10px;
   margin-top: 25px;
   margin-bottom: 25px;
@@ -225,7 +235,7 @@ dialog {
 .card {
   min-height: 300px;
   width: 400px;
-  background-color: #f3f3f3;
+  background-color: #a1aa21b4;
   display: flex;
   padding: 1em;
   box-shadow: 11px 8px 19px 0px rgb(2, 2, 2);
@@ -248,11 +258,12 @@ dialog {
 }
 
 #bgimage {
-  background-image: url('../img/diary.jpg');
+  background-image: url('../img/notebook.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 300px;
   height: 400px;
+  
 }
 
 @media screen and (max-width: 800px) {
@@ -260,6 +271,399 @@ dialog {
     flex-direction: column;
   }
 }
+/* sininen outline pois */
+*:focus {
+  outline: none;
+}
+
+/* Nyt värjää myös submit buttonin, ehkä fiksua käyttää id/luokka */
+.registerForm input {
+  border: 1px solid white;
+  border-left: 5px solid;
+  transition: border-color .5s ease-out;
+}
+::placeholder {
+  color: rgb(136, 74, 74);
+  padding-left: 10px;
+  font-weight: 100;
+  -moz-padding-start: 30px;
+}
+input:focus, textarea:focus {
+  background-color: rgb(255, 244, 209);
+}
+.registerForm input:optional {
+  border-left-color: rgb(140, 140, 140);
+}
+.registerForm input:required {
+  border-left-color: yellow;
+}
+.registerForm input:invalid {
+  border-left-color: red;
+}
+.registerForm input:valid {
+  border-left-color: lightgreen
+}
+/* Bannerin tyylit */
+.banner {
+  width: 100%;
+  height: 20%; 
+  background-size: cover;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(109, 81, 81, 0.932)), url('6482662.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center; /* Keskittää sisällön pystysuunnassa */
+}
+
+/* Navigaatiopalkki */
+.navbar {
+  width: 85%;
+  margin: auto;
+  padding: 10px 0; /* Pienempi padding navigaatiossa */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  color: rgba(21, 70, 130, 0.971);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  position: relative;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Hover-efekti alaviivalla */
+.navbar ul li::after {
+  content: "";
+  height: 4px;
+  width: 0%;
+  background: #0d0010;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: width 0.25s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+/*********************/
+/* BMI osion tyylittely */
+
+.card-bmi {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.995);
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgb(213, 197, 197);
+  border-radius: 15px;
+}
+
+
+.card-bm2  h2 {
+  margin-top: 15px;
+}
+
+.card-bmi3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.description {
+  color: grey;
+  font-size: 18px;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(30, 39, 46);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.btn:hover,
+a:hover {
+  opacity: 0.7;
+}
+
+tbody {
+  background-color: #fff;
+}
+
+td {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+.lowBmi {
+  background-color: rgb(71, 178, 210);
+}
+.normalBmi {
+  background-color: rgb(112, 223, 112);
+}
+.highBmi {
+  background-color: rgb(244, 148, 30);
+}
 
 
 
+/*  Mobiiliresponsiivisuus (max-width: 768px) */
+@media (max-width: 768px) {
+  .card {
+      width: 95%; /*  mobiilinäkymään */
+      padding: 15px; /* Vähennetään sisämarginaalia */
+      background-size: contain; /* Varmistaa, että kuva ei peitä tekstiä */
+  }
+
+  .card h1, .card h2, .card p {
+      font-size: 16px; /* Pienennetään fonttia mobiilissa */
+      line-height: 1.4; /* Lisää väliä riveille */
+  }
+}
+
+/* Pienet mobiilinäytöt (max-width: 480px) */
+@media (max-width: 480px) {
+  .card {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .card h1, .card h2, .card p {
+      font-size: 14px; 
+  }
+}
+
+/* Yhteystiedot kortin tyylit */
+.card-yhteystiedot {
+  color: rgb(11, 11, 11);
+  background-color: rgba(239, 6, 6, 0.9);
+  width: 800px;
+  max-width: 90%;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 80px auto 40px;
+  text-align: center;
+  background-image: url("../img/lineheart.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.card-yhteystiedot h1 {
+  color: #64b1f4;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.heart {
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.heart-right {
+  width: 100px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+footer {
+  height: 50px;
+  background-color: rgb(39, 13, 64);
+  color: aliceblue;
+  text-align: center;
+  padding-top: 10px;
+}
+/* oman teksti varteen */
+.slogan {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;
+  color: #060606;
+}
+
+/* Vain authtest.html taustakuvaa */
+body:has(.loginForm) {
+  background-image: url('../../img/hytekuva.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Yhteinen laatikko register- ja login-formille */
+.auth-container {
+  background: rgba(158, 145, 157, 0.584);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 50px auto;
+}
+
+.auth-container h3 {
+  margin-bottom: 15px;
+}
+
+.auth-container form {
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background: rgba(89, 11, 214, 0.785);
+  color: rgb(168, 57, 57);
+}
+
+.auth-container input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.auth-container input[type="submit"] {
+  background: rgb(89, 11, 214, 0.785);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.auth-container input[type="submit"]:hover {
+  background: #ddd;
+}
+
+/* Asetetaan kaksi laatikkoa vierekkäin */
+.box-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 50px auto;
+}
+
+/* Yleinen laatikkotyyli */
+.box {
+  width: 45%;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  color: rgb(229, 161, 161);
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Määritetään erikseen vasen ja oikea laatikko */
+.left-box {
+  float: left;
+}
+
+.right-box {
+  float: right;
+}
+
+/* Responsiivinen muotoilu mobiililaitteille */
+@media (max-width: 768px) {
+  .box-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.map-content {
+  display: flex; /* Asettaa .map ja .content-us vierekkäin */
+  justify-content: space-around; /* Tasainen väli elementtien välillä */
+  align-items: center; /* Kohdistaa ne pystysuunnassa */
+  gap: 20px; /* Väli kahden elementin välillä */
+  flex-wrap: wrap; /* Varmistaa, että pienillä näytöillä ne menevät allekkain */
+  margin-top: 20px;
+}
+
+.map {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Tumma läpinäkyvä tausta */
+  color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  width: 45%; /* Säädetty leveys, jotta se pysyy rivillä */
+  max-width: 600px; /* Maksimikoko */
+  min-width: 300px; /* Ei liian pieni */
+}
+
+.content-us {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.729);
+  color: rgb(250, 250, 250);
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgb(245, 242, 242);
+  width: 45%; 
+  max-width: 600px;
+  min-width: 300px;
+}
+.card .get_entries {
+  width: 163px; 
+  height: 50px; 
+  padding: 0; 
+  font-size: 1em; 
+  background-color: #e3f20dd8;; 
+  color: black; 
+  border: 1px solid transparent; 
+  border-radius: 8px; 
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
