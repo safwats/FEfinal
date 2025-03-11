@@ -18,7 +18,7 @@ Linkki sovelluksseen
 
 FE front-end http://localhost:5174
 
-BE back-end http:/loaclhost:3000
+BE back-end http://loaclhost:3000
 
 API-DOKUMENTAATIO
 
