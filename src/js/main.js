@@ -29,47 +29,14 @@ document.querySelector('#app').innerHTML = `Welcome to our website ${localStorag
 
 getData();
 
-document.addEventListener("DOMContentLoaded", function () {
-    const makeNewEntry = document.querySelector('#create_entry');
-
-    makeNewEntry.addEventListener('click', function () {
-        // Haetaan lomake ja tarkistetaan, onko se olemassa
-        const form = document.querySelector(".luo.merkintä");
-        if (!form) return;
-
-        // Haetaan lomakkeen syötteet
-        const inputs = form.querySelectorAll("input");
-        const date = inputs[0].value;
-        const feeling = inputs[1].value;
-        const weight = inputs[2].value;
-        const sleep = inputs[3].value;
-        const note = inputs[4].value;
-
-        // Piilotetaan vain lomake
-        form.style.display = "none";
-
-        // Haetaan päiväkirjaosio
-        const diarySection = document.getElementById("diary");
-
-        // Luodaan uusi päiväkirjamerkintä
-        const diaryEntry = document.createElement("div");
-        diaryEntry.classList.add("card");
-        diaryEntry.innerHTML = `
-            <div class="card-diary">
-                <h2>Päiväkirjamerkintä</h2>
-                <p><strong>Pvm:</strong> ${date}</p>
-                <p><strong>Fiilis:</strong> ${feeling}</p>
-                <p><strong>Paino:</strong> ${weight} kg</p>
-                <p><strong>Uni:</strong> ${sleep} tuntia</p>
-                <p><strong>Huomio:</strong> ${note}</p>
-            </div>
-        `;
-
-        // Lisätään päiväkirjamerkintä näkyviin
-        diarySection.appendChild(diaryEntry);
-    });
-});
-
+//  const makeNewEntry = document.querySelector('#create_entry');
+//  makeNewEntry.addEventListener('click', function() {
+//     const allElements = document.querySelectorAll("*");
+//     for (let i = 0; i < allElements.length; i++) {
+//         allElements[i].style.display = "none";
+        
+//     };
+//  });
 
 
 
@@ -121,6 +88,3 @@ function calculateBMI(weight, height) {
         analyysiElment.innerText = normalBmi;
     }
 }
-
-
-console.log(token["token"])

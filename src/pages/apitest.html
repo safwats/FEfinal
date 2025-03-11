@@ -25,49 +25,27 @@
     <div id="app"></div>
 
     <main>
-      <h3>console.log harjoitukset</h3>
 
-      <p>
-        Hae kaikki items tiedot omasta backendistä ja printtaa tulos konsoliin
-      </p>
+
+
 
       <ul class="testlist"></ul>
 
-      <pre>GET  http://127.0.0.1:3000/api/items </pre>
+      
 
-      <h3>Esimerkkitaulukko, staattinen</h3>
+      
 
       <table class="styled-table">
         <thead>
 
         </thead>
-        <tbody>
-          <tr>
-
-          </tr>
-          <!--  <tr class="active-row"> -->
-          <tr>
-
-          </tr>
-        </tbody>
       </table>
 
-      <h3>Haetaan nappia painamalla kaikki käyttäjät</h3>
 
-      <pre>GET  http://127.0.0.1:3000/api/users</pre>
 
       <div class="forms">
         <div style="flex: 1">
-          <h3>GET</h3>
 
-          <p>
-            Hae käyttäjän tiedot painamalla alla olevaa nappia. Tämä hakee
-            tiedot sekä luo taulukon tbody osan. Jokaiselle riville luodaan
-            nappulat. Info hakee yksittäisen rivin tiedot ja avaa alert-popupin.
-            Delete poistaa yksittäisen rivin ja varmistaa tapahtuman confirm()
-            kun reitti on valmiina. metodilla. Info on kotitehtävä ja Delete
-            toiminto lisätään myöhemmin
-          </p>
 
           <table class="styled-table">
             <thead>
@@ -79,24 +57,7 @@
             </tbody>
           </table>
         </div>
-        <div style="flex: 1">
-          <h3>POST</h3>
 
-
-          <p>
-            Lisää käyttäjiä formin avulla. Formi lisää uuden käyttäjän
-            nappulasta 'Add User'.
-          </p>
-
-          <pre style="overflow: auto">
-
-  POST http://localhost:3000/api/users
-  content-type: application/json
-
-
-          </pre>
-
-        </div>
       </div>
       <!--oma näkymään päivääkirja varteen -->
       <form class="luo merkintä">
@@ -140,7 +101,7 @@
             <p>Huomio</p>
         </div>
         <button class="get_entries">Näytä merkinnät</button>
-        <button id="create_entry">Luo merkintä</button>
+        <!-- <button id="create_entry">Luo merkintä</button> -->
         <div id="content"></div>
         
       </section>
