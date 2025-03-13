@@ -25,21 +25,24 @@ const getEntries = async () => {
     return;
   }
 
+// Muuttaa palvelimelta saadun json objectin lista muotoon, jotta voidaa käyttää foreach functiota arvojen (iteroimiseen = läpi käyminen)
   console.log(response);
+  const entries = [response]
+
+
 
   // looppi jossa luodaan yksittäiset kortit
   diaryContainer.innerHTML = '';
-  response.forEach((entry) => {
+  entries.forEach((entry) => {
     const card = document.createElement('div');
     card.classList.add('card');
 
     const cardImg = document.createElement('div');
     cardImg.classList.add('card-img');
 
-    const img = document.createElement('img');
-    img.src = '/img/notebook.jpg';
-    img.alt = 'Diary Image';
-    cardImg.appendChild(img);
+     const img = document.createElement('img');
+     img.src = '/img/notebook.jpg';
+     cardImg.appendChild(img);
 
     const cardDiary = document.createElement('div');
     cardDiary.classList.add('card-diary');

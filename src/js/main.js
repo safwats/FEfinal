@@ -38,16 +38,18 @@ getData();
 //     };
 //  });
 
+// kuuluu tähän display merkintä 
 
 
-const getItemBtn = document.querySelector('.get_items');
-getItemBtn.addEventListener('click', getItems);
 
-const getUserBtn = document.querySelector('.get_users');
-getUserBtn.addEventListener('click', getUsers);
+// const getItemBtn = document.querySelector('.get_items');
+// getItemBtn.addEventListener('click', getItems);
 
-const addUserForm = document.querySelector('.formpost');
-addUserForm.addEventListener('click', addUser);
+// const getUserBtn = document.querySelector('.get_users');
+// getUserBtn.addEventListener('click', getUsers);
+
+// const addUserForm = document.querySelector('.formpost');
+// addUserForm.addEventListener('click', addUser);
 
 const getEntriesBtn = document.querySelector('.get_entries');
 getEntriesBtn.addEventListener('click', getEntries);
