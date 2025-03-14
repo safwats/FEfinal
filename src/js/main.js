@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-document.querySelector('#app').innerHTML = `Welcome to our website ${localStorage.getItem('nimi')}`;
+document.querySelector('#app').innerHTML = `Tervetuloa omalle sivulle! ${localStorage.getItem('nimi')}`;
 
 getData();
 

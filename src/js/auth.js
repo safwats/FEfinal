@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 console.log('Moi luodaan nyt tokeneita ja kirjaudutaan sisään');
 
 // Esimerkin takia haut ovat nyt suoraan tässä tiedostossa, jotta harjoitus ei sekoita
-// teidän omaa projektin rakennetta
 
 const registerUser = async (event) => {
   event.preventDefault();

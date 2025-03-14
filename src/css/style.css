@@ -476,7 +476,7 @@ td {
 .card-yhteystiedot {
   color: rgb(11, 11, 11);
   background-color: rgba(239, 6, 6, 0.9);
-  width: 800px;
+  width: 768px;
   max-width: 90%;
   padding: 20px;
   border-radius: 15px;
@@ -659,7 +659,7 @@ body:has(.loginForm) {
   padding: 0; 
   font-size: 1em; 
   background-color: #e3f20dd8;; 
-  color: black; 
+  color: rgb(0, 0, 0); 
   border: 1px solid transparent; 
   border-radius: 8px; 
   text-align: center;
@@ -673,7 +673,7 @@ body:has(.loginForm) {
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(132, 119, 214, 0.749);
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -696,7 +696,7 @@ body:has(.loginForm) {
 .diary-entries-container {
   flex: 1;
   min-width: 300px;
-  background-color: rgba(240, 240, 240, 0.7);
+  background-color: rgba(240, 241, 242, 0.367);
   padding: 15px;
   border-radius: 10px;
   max-height: 700px;
@@ -706,13 +706,13 @@ body:has(.loginForm) {
 .diary-entries-container h3 {
   margin-top: 0;
   color: #333;
-  border-bottom: 2px solid #a1aa21;
+  border-bottom: 2px solid #1a1a13;
   padding-bottom: 10px;
 }
 
 .get_entries {
   margin-bottom: 15px;
-  background-color: #a1aa21;
+  background-color: #5360cd;
   color: white;
   border: none;
   transition: background-color 0.3s;
@@ -726,15 +726,15 @@ body:has(.loginForm) {
 .diary-form-container {
   flex: 1;
   min-width: 300px;
-  background-color: rgba(230, 230, 230, 0.7);
+  background-color: rgba(240, 241, 242, 0.367);
   padding: 15px;
   border-radius: 10px;
 }
 
 .diary-form-container h3 {
   margin-top: 0;
-  color: #333;
-  border-bottom: 2px solid #a1aa21;
+  color: #201e1e;
+  border-bottom: 2px solid #000000;
   padding-bottom: 10px;
 }
 
@@ -744,7 +744,7 @@ body:has(.loginForm) {
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  color: #333;
+  color: #866e6e;
 }
 
 .form-group {
@@ -769,7 +769,7 @@ body:has(.loginForm) {
 .submit-entry {
   margin-top: 10px;
   padding: 12px;
-  background-color: #a1aa21;
+  background-color: #5360cd;
   color: white;
   border: none;
   border-radius: 5px;
@@ -790,7 +790,7 @@ body:has(.loginForm) {
 }
 
 .entries-list .card {
-  background-color: rgba(122, 80, 80, 0.421);
+  background-color: rgba(167, 84, 219, 0.432);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
