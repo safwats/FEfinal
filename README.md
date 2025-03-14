@@ -10,8 +10,8 @@ kuva 2 otettu 75% koska ei mahtunut
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 ![alt text](image-5.png)
-![alt text](image-6.png)
 ![alt text](image-7.png)
+![image6](https://github.com/user-attachments/assets/62374fe5-6fff-474e-954e-096bf3b15cea)
 
 
 Linkki sovelluksseen 
